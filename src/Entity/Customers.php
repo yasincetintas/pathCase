@@ -5,6 +5,8 @@ namespace App\Entity;
 
 use App\Traits\EntityDateInformationTrait;
 use App\Traits\SoftDeletableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -71,11 +73,18 @@ class Customers implements UserInterface
      * @ORM\Column(name="is_active", type="boolean",options={"default" :true})
      */
     private $isActive;
+    /**
+     * @var Orders|null
+     * @ORM\OneToMany(targetEntity="Orders", mappedBy="customer")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $orders;
 
     public function __construct()
     {
         $this->isActive = true;
         $this->roles = array();
+        $this->orders = new ArrayCollection();
     }
 
     /**
@@ -221,7 +230,26 @@ class Customers implements UserInterface
     {
         $this->isActive = $isActive;
     }
+    /**
+     * @return Collection|Orders[]
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
 
+    /**
+     * @param Orders $orders
+     * @return $this
+     */
+    public function addOrders(Orders $orders): self
+    {
+        if (!$this->orders->contains($orders)) {
+            $this->orders[] = $orders;
+            $orders->setCustomer($this);
+        }
+        return $this;
+    }
     /**
      * @inheritDoc
      */
