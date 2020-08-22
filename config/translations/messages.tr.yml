@@ -1,0 +1,26 @@
+messages:
+  critical:
+    exception: 'Bilinmeyen bir hata oluştu.'
+    content_type: 'Content Type "application/json" olmalı.'
+  success:
+    default: 'İşlem başarılı'
+  warning:
+    invalid_parameter: 'Eksik veya Hatalı Parametre gönderildi.'
+    not_found_temp_user: 'Ziyaretçi bulunamadı.'
+    not_found_site: 'Site bulunamadı.'
+  error:
+    type:
+      latitude: 'latitude Hatalı veritipi gönderildi.'
+      longitude: 'longitude Hatalı veritipi gönderildi.'
+    valid :
+      firstname: 'İsim alanını boş geçmeyiniz.'
+      username:  'Email adresi hatalı (ornek@europ-assistance.com.tr)'
+      password: 'Şifre alanını boş geçmeyiniz.'
+      phoneNumber: 'Telefon numrası alanını boş geçmeyiniz.'
+    required :
+      lat: 'lat parametresi boş gönderilemez.'
+      lng: 'lng parametresi boş gönderilemez.'
+
+    already_email : 'Bu email daha önceden kaydedilmiş'
+    notfound_email : 'Bu email adresi sistemde kayıtlı değil'
+    validate_email : 'Email adresi hatalı'
