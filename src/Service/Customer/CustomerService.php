@@ -10,6 +10,7 @@ use App\Exceptions\ServiceException;
 use App\Service\AbstractService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
+
 class CustomerService extends AbstractService
 {
     /**
@@ -37,7 +38,7 @@ class CustomerService extends AbstractService
         $data = json_decode($request->getContent());
         $this->checkProduct($data->productId);
         $this->checkQuantity($data->quantity);
-        $date = new \DateTime('@'.strtotime($data->shippingDate));
+        $date = new \DateTime('@' . strtotime($data->shippingDate));
         $order = new Orders();
         $order->setCustomer($this->user);
         $order->setProduct($this->product);
@@ -45,7 +46,29 @@ class CustomerService extends AbstractService
         $order->setOrderCode($this->generateOrderCode());
         $order->setShippingDate($date);
         $order->setQuantity($data->quantity);
-        $this->product->setAvailablePieces($this->product->getAvailablePieces()-$data->quantity);
+        $this->product->setAvailablePieces($this->product->getAvailablePieces() - $data->quantity);
+        $this->persist($order);
+        return $order;
+    }
+
+    public function updateOrder(Orders $order,$request)
+    {
+        $data = json_decode($request->getContent());
+        $this->checkProduct($data->productId);
+        $this->checkQuantity($data->quantity);
+        if (!is_null($order->getShippingDate()) && is_null($data->shippingDate)){
+            throw new ServiceException("Sipariş Tarihi girilmiştir. Güncelleme Yapamazsınız.", Response::HTTP_NOT_FOUND);
+        }
+        $productQuantityCount = ($this->product->getAvailablePieces()+$order->getQuantity()) - $data->quantity;
+        $this->product->setAvailablePieces($productQuantityCount);
+        $order->setProduct($this->product);
+        $order->setAddress($data->address);
+        $order->setOrderCode($data->orderCode);
+        if ($data->shippingDate){
+            $date = new \DateTime('@' . strtotime($data->shippingDate));
+            $order->setShippingDate($date);
+        }
+        $order->setQuantity($data->quantity);
         $this->persist($order);
         return $order;
     }

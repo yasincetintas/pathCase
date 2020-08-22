@@ -7,6 +7,7 @@ messages:
   warning:
     invalid_parameter: 'Eksik veya Hatalı Parametre gönderildi.'
     not_found_product: 'Ürün bulunamadı.'
+    not_found_order: 'Sipariş bulunamadı.'
   error:
     already_email : 'Bu email daha önceden kaydedilmiş'
     notfound_email : 'Bu email adresi sistemde kayıtlı değil'
