@@ -83,4 +83,20 @@ class CustomerController extends BaseController
             ->setResponseType('orders')
             ->response($response);
     }
+
+    /**
+     * @Route("/api/order/{order}",name="get_order",methods={"GET"})
+     * @param $order
+     * @return Response
+     */
+    public function getOrder($order)
+    {
+        $orderObject = $this->getRepo(Orders::class)->find($order);
+        if (!$orderObject instanceof Orders){
+            throw new ServiceException("Sipariş Bulunamadı.", Response::HTTP_NOT_FOUND);
+        }
+        return self::setGroups(['groups' => ["Order"]])
+            ->setResponseType('orders')
+            ->response($orderObject);
+    }
 }
