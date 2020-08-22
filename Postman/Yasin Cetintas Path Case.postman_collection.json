@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "069da3e9-c8d8-4ede-98a9-385063c8dfcc",
+		"name": "Yasin Cetintas Path Case",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\" : \"testuser\",\r\n\t\"password\" : \"123qwe\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "path.local/login",
+					"host": [
+						"path",
+						"local"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "3 adet örnek kullanıcı ekledim."
+			},
+			"response": []
+		},
+		{
+			"name": "All Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1OTgxMDkwOTksImV4cCI6MTU5OTE5NTQ5OSwicm9sZXMiOltdLCJ1c2VybmFtZSI6InRlc3R1c2VyIn0.oIRC60YNufPSfa93fhWnqaIghja0YS_J1LZm6Eywu7CjT6Lf-3O099gtRKWnaaXWE4ai6LdrQ9fo0ca9kl2RrrkEBx_KNPVPVqT4nP_l2FIEXqsbPtES0911XFYqSj8ChEvpi0ijgxCC2_auZwcQaSYCKNJlDkUF7jP9BOr7S6bJxH3UmU1wDQKjCWH9xeMKVld7ybuDIuvzQRM7wtyxSNFsMmf__6wYWVTsFMUe4ymZg00nMpJXOvciOyu6uAet8CPz2T_UdMVQ6DfOAvgbZlXWdPcLV3RJ2qwAsUSorDDVsYTsUHb-Jn_ydVeGZq87tuPUgmZBdMmUclk1FJctOLPVdUfWWoZQBmyrsjGhnR5Ne5DQk-GspjsQi721gUX30qzv5U4kEEFjcbaUZbSYwOuv7BXXWLXgzJzYX9dpoCLoIXZbwx7hkDcVrUKVm3DYWrbj6MDQ07A7lyiDaJrD21jQVszjjHvYMCUhXX6SLBjzpNmABvfnuAlTPfm9Pv_B4Iyz7W_F2jTQYsf_yFwhEOaEn7-FLCAYxBdIGrQNhGpuu0rl8nOE8Tvtk6a-WUpkK8z49C6KY21Uniy9GyL-f3jUbhiYUTgWXe3HyGwSynl350SFmqL4sfyM_26SAULAjXieZMyhdQfrdi7YyV9A2vK1cUc8HRvsYLyl-129_-U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "path.local/api/orders",
+					"host": [
+						"path",
+						"local"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1OTgxMDkwOTksImV4cCI6MTU5OTE5NTQ5OSwicm9sZXMiOltdLCJ1c2VybmFtZSI6InRlc3R1c2VyIn0.oIRC60YNufPSfa93fhWnqaIghja0YS_J1LZm6Eywu7CjT6Lf-3O099gtRKWnaaXWE4ai6LdrQ9fo0ca9kl2RrrkEBx_KNPVPVqT4nP_l2FIEXqsbPtES0911XFYqSj8ChEvpi0ijgxCC2_auZwcQaSYCKNJlDkUF7jP9BOr7S6bJxH3UmU1wDQKjCWH9xeMKVld7ybuDIuvzQRM7wtyxSNFsMmf__6wYWVTsFMUe4ymZg00nMpJXOvciOyu6uAet8CPz2T_UdMVQ6DfOAvgbZlXWdPcLV3RJ2qwAsUSorDDVsYTsUHb-Jn_ydVeGZq87tuPUgmZBdMmUclk1FJctOLPVdUfWWoZQBmyrsjGhnR5Ne5DQk-GspjsQi721gUX30qzv5U4kEEFjcbaUZbSYwOuv7BXXWLXgzJzYX9dpoCLoIXZbwx7hkDcVrUKVm3DYWrbj6MDQ07A7lyiDaJrD21jQVszjjHvYMCUhXX6SLBjzpNmABvfnuAlTPfm9Pv_B4Iyz7W_F2jTQYsf_yFwhEOaEn7-FLCAYxBdIGrQNhGpuu0rl8nOE8Tvtk6a-WUpkK8z49C6KY21Uniy9GyL-f3jUbhiYUTgWXe3HyGwSynl350SFmqL4sfyM_26SAULAjXieZMyhdQfrdi7YyV9A2vK1cUc8HRvsYLyl-129_-U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"productId\" : 1,\r\n    \"quantity\":3,\r\n    \"address\":\"asdsad\",\r\n    \"shippingDate\":\"2020-08-22 17:30:12\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "path.local/api/order/new",
+					"host": [
+						"path",
+						"local"
+					],
+					"path": [
+						"api",
+						"order",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1OTgxMDkwOTksImV4cCI6MTU5OTE5NTQ5OSwicm9sZXMiOltdLCJ1c2VybmFtZSI6InRlc3R1c2VyIn0.oIRC60YNufPSfa93fhWnqaIghja0YS_J1LZm6Eywu7CjT6Lf-3O099gtRKWnaaXWE4ai6LdrQ9fo0ca9kl2RrrkEBx_KNPVPVqT4nP_l2FIEXqsbPtES0911XFYqSj8ChEvpi0ijgxCC2_auZwcQaSYCKNJlDkUF7jP9BOr7S6bJxH3UmU1wDQKjCWH9xeMKVld7ybuDIuvzQRM7wtyxSNFsMmf__6wYWVTsFMUe4ymZg00nMpJXOvciOyu6uAet8CPz2T_UdMVQ6DfOAvgbZlXWdPcLV3RJ2qwAsUSorDDVsYTsUHb-Jn_ydVeGZq87tuPUgmZBdMmUclk1FJctOLPVdUfWWoZQBmyrsjGhnR5Ne5DQk-GspjsQi721gUX30qzv5U4kEEFjcbaUZbSYwOuv7BXXWLXgzJzYX9dpoCLoIXZbwx7hkDcVrUKVm3DYWrbj6MDQ07A7lyiDaJrD21jQVszjjHvYMCUhXX6SLBjzpNmABvfnuAlTPfm9Pv_B4Iyz7W_F2jTQYsf_yFwhEOaEn7-FLCAYxBdIGrQNhGpuu0rl8nOE8Tvtk6a-WUpkK8z49C6KY21Uniy9GyL-f3jUbhiYUTgWXe3HyGwSynl350SFmqL4sfyM_26SAULAjXieZMyhdQfrdi7YyV9A2vK1cUc8HRvsYLyl-129_-U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"productId\" : 1,\r\n    \"quantity\":4,\r\n    \"address\":\"asdsad\",\r\n    \"orderCode\":\"1159811567120716621261\",\r\n    \"shippingDate\":\"2020-08-22 17:30:12\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "path.local/api/order/3/update",
+					"host": [
+						"path",
+						"local"
+					],
+					"path": [
+						"api",
+						"order",
+						"3",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1OTgxMDkwOTksImV4cCI6MTU5OTE5NTQ5OSwicm9sZXMiOltdLCJ1c2VybmFtZSI6InRlc3R1c2VyIn0.oIRC60YNufPSfa93fhWnqaIghja0YS_J1LZm6Eywu7CjT6Lf-3O099gtRKWnaaXWE4ai6LdrQ9fo0ca9kl2RrrkEBx_KNPVPVqT4nP_l2FIEXqsbPtES0911XFYqSj8ChEvpi0ijgxCC2_auZwcQaSYCKNJlDkUF7jP9BOr7S6bJxH3UmU1wDQKjCWH9xeMKVld7ybuDIuvzQRM7wtyxSNFsMmf__6wYWVTsFMUe4ymZg00nMpJXOvciOyu6uAet8CPz2T_UdMVQ6DfOAvgbZlXWdPcLV3RJ2qwAsUSorDDVsYTsUHb-Jn_ydVeGZq87tuPUgmZBdMmUclk1FJctOLPVdUfWWoZQBmyrsjGhnR5Ne5DQk-GspjsQi721gUX30qzv5U4kEEFjcbaUZbSYwOuv7BXXWLXgzJzYX9dpoCLoIXZbwx7hkDcVrUKVm3DYWrbj6MDQ07A7lyiDaJrD21jQVszjjHvYMCUhXX6SLBjzpNmABvfnuAlTPfm9Pv_B4Iyz7W_F2jTQYsf_yFwhEOaEn7-FLCAYxBdIGrQNhGpuu0rl8nOE8Tvtk6a-WUpkK8z49C6KY21Uniy9GyL-f3jUbhiYUTgWXe3HyGwSynl350SFmqL4sfyM_26SAULAjXieZMyhdQfrdi7YyV9A2vK1cUc8HRvsYLyl-129_-U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "path.local/api/order/3",
+					"host": [
+						"path",
+						"local"
+					],
+					"path": [
+						"api",
+						"order",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
