@@ -50,11 +50,15 @@ class CustomerController extends BaseController
      * @Route("/api/order/new",name="new_order",methods={"POST"})
      * @param Request $request
      * @param CustomerService $service
+     * @return Response
+     * @throws \Exception
      */
     public function newOrder(Request $request,CustomerService $service)
     {
         $this->validateRequest($request->getContent(), CreateOrder::class);
         $response = $service->createOrder($request);
-        dd($response);
+        return self::setGroups(['groups' => ["Order"]])
+            ->setResponseType('orders')
+            ->response($response);
     }
 }

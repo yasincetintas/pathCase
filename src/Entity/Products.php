@@ -9,6 +9,7 @@ use App\Traits\SoftDeletableTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductsRepository")
@@ -24,10 +25,12 @@ class Products
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
+     * @Groups({"Order"})
      */
     private $id;
     /**
      * @ORM\Column(name="name",type="string",nullable=false,length=255)
+     * @Groups({"Order"})
      */
     private $name;
     /**

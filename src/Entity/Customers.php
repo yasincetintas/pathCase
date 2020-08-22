@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  *
@@ -27,12 +28,14 @@ class Customers implements UserInterface
      * @ORM\Id()
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"Order"})
      */
     private $id;
     /**
      * @var string
      *
      * @ORM\Column(type="string", length=25, unique=true)
+     * @Groups({"Order"})
      */
     private $username;
     /**
@@ -51,12 +54,14 @@ class Customers implements UserInterface
      * @var string|null
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     * @Groups({"Order"})
      */
     private $name;
     /**
      * @var string|null
      *
      * @ORM\Column(name="surname", type="string", length=255, nullable=true)
+     * @Groups({"Order"})
      */
     private $surname;
     /**
