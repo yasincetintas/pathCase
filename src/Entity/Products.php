@@ -31,10 +31,6 @@ class Products
      */
     private $name;
     /**
-     * @ORM\Column(name="order_code",type="string",nullable=false,length=150)
-     */
-    private $orderCode;
-    /**
      * @ORM\Column(name="available_pieces",type="integer",nullable=false,options={"default" :0})
      */
     private $availablePieces;
@@ -82,22 +78,6 @@ class Products
     public function setName($name): void
     {
         $this->name = $name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getOrderCode()
-    {
-        return $this->orderCode;
-    }
-
-    /**
-     * @param mixed $orderCode
-     */
-    public function setOrderCode($orderCode): void
-    {
-        $this->orderCode = $orderCode;
     }
 
     /**

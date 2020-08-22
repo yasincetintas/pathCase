@@ -6,6 +6,8 @@ namespace App\Controller;
 
 use App\Entity\Orders;
 use App\Entity\Products;
+use App\Models\Request\Order\CreateOrder;
+use App\Service\Customer\CustomerService;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +22,7 @@ class CustomerController extends BaseController
     public function test()
     {
         $products = $this->getDoctrine()->getRepository(Products::class)->findAll();
-        dd( $products);
+        dd($products);
     }
 
     /**
@@ -34,7 +36,7 @@ class CustomerController extends BaseController
     {
         $user = $this->getUser();
         $userOrdersRepo = $this->getDoctrine()->getRepository(Orders::class);
-        $userOrders = $userOrdersRepo->findBy(array("customer"=>$user));
+        $userOrders = $userOrdersRepo->findBy(array("customer" => $user));
         $filter = $this->queryToFilter($request, count($userOrders));
         $filter['customer']['in'] = $user->getId();
         $data = $userOrdersRepo->findWithFilter($filter);
@@ -42,5 +44,17 @@ class CustomerController extends BaseController
         return self::setGroups(['groups' => ["Order"]])
             ->setResponseType('orders')
             ->response($data);
+    }
+
+    /**
+     * @Route("/api/order/new",name="new_order",methods={"POST"})
+     * @param Request $request
+     * @param CustomerService $service
+     */
+    public function newOrder(Request $request,CustomerService $service)
+    {
+        $this->validateRequest($request->getContent(), CreateOrder::class);
+        $response = $service->createOrder($request);
+        dd($response);
     }
 }
