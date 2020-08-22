@@ -59,7 +59,7 @@ Path  : C:\Windows\System32\drivers\etc\hosts
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-* Postman Collection : [Postman Collection Path](https://example.com)
+* Postman Collection : [Postman Collection Path](https://github.com/yasincetintas/pathCase/blob/master/Postman/Yasin%20Cetintas%20Path%20Case.postman_collection.json)
 * How to install or Generate OpenSSL : [Documentation](https://emirkarsiyakali.com/implementing-jwt-authentication-to-your-api-platform-application-885f014d3358?source=social.tw )
 
 <!-- CONTACT -->
