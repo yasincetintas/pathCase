@@ -29,8 +29,8 @@ php bin/console composer install
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Postman Collection : [Documentation](https://example.com)
-How to install or Generate OpenSSL : [Documentation](https://emirkarsiyakali.com/implementing-jwt-authentication-to-your-api-platform-application-885f014d3358?source=social.tw )
+* Postman Collection : [Postman Collection Path](https://example.com)
+* How to install or Generate OpenSSL : [Documentation](https://emirkarsiyakali.com/implementing-jwt-authentication-to-your-api-platform-application-885f014d3358?source=social.tw )
 
 <!-- CONTACT -->
 ## Contact
