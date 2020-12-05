@@ -8,7 +8,7 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 class Violation implements ViolationInterface
 {
-    private TextInterface $textUtil;
+    private $textUtil;
 
     public function __construct(TextInterface $textUtil)
     {

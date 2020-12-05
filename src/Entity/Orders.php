@@ -37,14 +37,14 @@ class Orders
      * @ORM\JoinColumn(nullable=true)
      * @Groups({"Order"})
      */
-    private Products $product;
+    private $product;
     /**
      * @var Customers
      * @ORM\ManyToOne(targetEntity="Customers" ,inversedBy="orders")
      * @ORM\JoinColumn(nullable=true)
      * @Groups({"Order"})
      */
-    private Customers $customer;
+    private $customer;
     /**
      * @ORM\Column(name="address",type="text",nullable=false)
      * @Groups({"Order"})
@@ -59,7 +59,7 @@ class Orders
      * @ORM\Column(name="quantity",type="integer",nullable=false,options={"default" :1})
      * @Groups({"Order"})
      */
-    private int $quantity;
+    private $quantity;
 
     /**
      * @return mixed

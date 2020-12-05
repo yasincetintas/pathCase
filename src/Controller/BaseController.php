@@ -65,7 +65,7 @@ class BaseController extends Controller
     /**
      * @var Request
      */
-    private Request $requestUtil;
+    private $requestUtil;
 
     /**
      * BaseController constructor.

@@ -13,7 +13,7 @@ class AuthenticationFailureListener
     /**
      * @var ContainerInterface
      */
-    private ContainerInterface $container;
+    private  $container;
 
     /**
      * @var Request|null
@@ -23,7 +23,7 @@ class AuthenticationFailureListener
     /**
      * @var Token
      */
-    private Token $token;
+    private $token;
 
     public function __construct(ContainerInterface $container, Token $token)
     {

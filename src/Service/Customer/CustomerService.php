@@ -16,7 +16,7 @@ class CustomerService extends AbstractService
     /**
      * @var Products
      */
-    private Products $product;
+    private $product;
 
 
     private $user;

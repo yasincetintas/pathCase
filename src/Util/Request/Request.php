@@ -14,9 +14,9 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class Request implements RequestModelInterface
 {
-    private SerializerInterface $serializer;
-    private ValidatorInterface $validator;
-    private ViolationInterface $violator;
+    private $serializer;
+    private $validator;
+    private $violator;
 
     public function __construct(
         SerializerInterface $serializer,

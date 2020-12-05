@@ -11,7 +11,7 @@ class AuthenticationSuccessListener
     /**
      * @var ContainerInterface
      */
-    private ContainerInterface $container;
+    private $container;
 
     public function __construct(ContainerInterface $container)
     {

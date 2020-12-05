@@ -9,7 +9,7 @@ class Response
     /**
      * @var SerializerInterface
      */
-    private SerializerInterface $serializer;
+    private $serializer;
 
     /**
      * Response constructor.

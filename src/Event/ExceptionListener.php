@@ -14,11 +14,11 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ExceptionListener
 {
-    private ExceptionLogService $logger;
+    private $logger;
     /**
      * @var TranslatorInterface
      */
-    private TranslatorInterface $translator;
+    private $translator;
 
     public function __construct(
         ExceptionLogService $logger,
